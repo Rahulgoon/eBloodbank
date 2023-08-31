@@ -26,5 +26,5 @@ const donorSchema = new Schema({
         require:true
     }
 },{timestamps:true});
-const Donor = model ('donotr' ,donorSchema);
+const Donor = model ('donor' ,donorSchema);
 module.exports = Donor

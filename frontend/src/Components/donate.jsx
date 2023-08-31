@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const year = ['1900','1991','1992','1993','1994','1995','1996','1997','1998','1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023']
 
+const donorData = (donor) => {
+  axios
+    .post("http://127.0.0.1:8001/v1/api/donate", donor)
+    .then((res) => alert(res.data))
+    .catch((err) => alert(err.message));
+};
 export const Donate = () => {
     const [donor, setDonor] = useState({
         name: "",
@@ -12,13 +17,28 @@ export const Donate = () => {
         email: "",
         address: "",
       });
-
     const handleInput = (e) => {
-
-    }
+      const { name, value } = e.target;
+      setDonor({...donor,[name]:value});
+    };
     const handleSign = (e) => {
+      e.preventDefault();
+      donorData(donor)
+      setDonor({
+        name: "",
+        gender:"",
+        birthyear:"",
+        mobile:"",
+        email: "",
+        address: "",
+      });
+    };
 
-    }
+  let year =[]
+  for(let i=1990;i<=2023;i++){
+    year.push(i)
+  }
+ console.log(year)
 
     return(
         <>
