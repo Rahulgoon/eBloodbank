@@ -1,0 +1,39 @@
+.g-3{
+    width:80%;
+    margin: auto;
+    margin-top: 9rem;
+    margin-bottom: 3rem;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    border-radius: 20px;
+    padding: 10px;
+}
+.departments{
+    margin-top: 5rem;
+}
+.contact{
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+#form-select{
+    margin: 11rem;
+    height: 300px;
+    width: 70%;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    padding: 10px;
+    color: red;
+}
+#form-select>button{
+    color: white;
+    font-weight: 32px;
+    background-color: red;
+    border: 0;
+    margin:14px;
+    padding: 8px;
+    border-radius: 10px;
+}
+#show{
+    display:flex;
+    gap: 10px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
