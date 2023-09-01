@@ -9,6 +9,10 @@ const donorSchema = new Schema({
         type:String,
         require:true
     },
+    bloodgroup:{
+        type:String,
+        require:true
+    },
     birthyear:{
         type:Number,
         require:true

@@ -22,6 +22,7 @@ export const Search = () => {
         <option value="B-">B-</option>
         <option value="AB+">AB+</option>
         <option value="AB-">AB-</option>
+        <option value="NOT KNOWN">NOT KNOWN</option>
       </select>
 
       <label htmlFor="">| Select District |</label>

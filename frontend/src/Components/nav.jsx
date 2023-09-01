@@ -114,7 +114,7 @@ export const Nav = () => {
               </li>
               <li style={mobile_nav_style}>
                 <a className="nav-link scrollto" href="/contact">
-                  Contact with Us
+                  Contact Us
                 </a>
               </li>
             </ul>

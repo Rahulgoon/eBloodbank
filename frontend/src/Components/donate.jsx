@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-
+const bgroup = ['O+','O-','A+','A-','B+','B-','AB+','AB-','NOT KNOWN']
 const donorData = (donor) => {
   axios
     .post("http://127.0.0.1:8001/v1/api/donate", donor)
@@ -12,6 +12,7 @@ export const Donate = () => {
     const [donor, setDonor] = useState({
         name: "",
         gender:"",
+        bloodgroup:"",
         birthyear:"",
         mobile:"",
         email: "",
@@ -27,6 +28,7 @@ export const Donate = () => {
       setDonor({
         name: "",
         gender:"",
+        bloodgroup:"",
         birthyear:"",
         mobile:"",
         email: "",
@@ -73,6 +75,24 @@ export const Donate = () => {
         <option value="Male">Male</option>
         <option value="Female">Female</option>
         <option value="Other">Other</option>
+        </select>
+        </div>
+
+        
+        <div className="col-12">
+        <label htmlFor="inputBirth4">Blood Group</label>
+        <select
+         type="input"
+         onChange={handleInput}
+         name="bloodgroup"
+         value={donor.bloodgroup}
+         className="form-control"
+         aria-label=".form-select-sm example"
+        >
+        <option selected>Choose....</option>
+        {bgroup.map((el)=>(
+        <option value={el}>{el}</option>
+       ))}
         </select>
         </div>
 
