@@ -72,9 +72,9 @@ export const Login = () => {
           <input type="submit" value="Log In !!" className="btn btn-danger" />
         </div>
         <h6>
-          Do you want to Sign Up ?
+          Do you want to Sign Up ?{" "}
           <a href="/signup">
-            <span>Sign Up</span>
+            <span>SIGN UP</span>
           </a>
         </h6>
       </form>

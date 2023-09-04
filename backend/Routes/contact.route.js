@@ -18,4 +18,14 @@ route.post("/contact", async(req,res) => {
         res.status(404).send(error.message)
     }
 });
+
+route.get('/contact',async(req,res)=>{
+    try {
+        const getContact = await Contact.find()
+        res.status(200).send({ Contact : getContact });
+    } catch (error) {
+        res.status(500).send({ message:error.message });
+    }
+});
+
 module.exports = route;

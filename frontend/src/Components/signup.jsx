@@ -84,9 +84,9 @@ export const Signup = () => {
           </button>
         </div>
         <h6>
-          Already Registered ?{" "}
+          Already Signed Up ?{" "}
           <a href="/login">
-            <span>Log In</span>
+            <span>LOG IN</span>
           </a>
         </h6>
       </form>

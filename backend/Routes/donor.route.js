@@ -13,9 +13,19 @@ route.post("/donate", async(req,res) => {
         }
         const donorData = new Donor({name,gender,bloodgroup,birthyear,mobile,email,address})
         await donorData.save()
-        res.status(201).send("Donor Signed Up")
+        res.status(201).send("Donor Signed Up");
     } catch (error) {
-        res.status(404).send(error.message)
+        res.status(404).send(error.message);
     }
 });
+
+route.get('/donate',async(req,res)=>{
+    try {
+        const getDonor = await Donor.find()
+        res.status(200).send({ Donor : getDonor });
+    } catch (error) {
+        res.status(500).send({ message:error.message });
+    }
+});
+
 module.exports = route;

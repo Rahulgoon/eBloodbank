@@ -1,6 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
+const contactData = (user) => {
+  axios
+    .post("http://127.0.0.1:8001/v1/api/contact", user)
+    .then((res) => alert(res.data))
+    .catch((err) => alert(err.message));
+};
 export const Contact = () => {
+  const [contact, setContact] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message:""
+  });
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    setContact({ ...contact, [name]: value });
+  };
+  const handleSign = (e) => {
+    e.preventDefault();
+    contactData(contact)
+    setContact({
+      name: "",
+      email: "",
+      subject: "",
+      message:""
+    });
+  };
+
     return(
         <>
          {/* ======= Contact Section ======= */}
@@ -44,7 +72,7 @@ export const Contact = () => {
           </div>
           <div className="col-lg-8 mt-5 mt-lg-0">
             <form
-             
+             onSubmit={handleSign}
               method="post"
               role="form"
               className="php-email-form"
@@ -54,6 +82,8 @@ export const Contact = () => {
                   <input
                     type="text"
                     name="name"
+                    value={contact.name}
+                    onChange={handleInput}
                     className="form-control"
                     id="name"
                     placeholder="Your Name"
@@ -65,6 +95,8 @@ export const Contact = () => {
                     type="email"
                     className="form-control"
                     name="email"
+                    value={contact.email}
+                    onChange={handleInput}
                     id="email"
                     placeholder="Your Email"
                     required=""
@@ -76,6 +108,8 @@ export const Contact = () => {
                   type="text"
                   className="form-control"
                   name="subject"
+                  value={contact.subject}
+                  onChange={handleInput}
                   id="subject"
                   placeholder="Subject"
                   required=""
@@ -85,6 +119,8 @@ export const Contact = () => {
                 <textarea
                   className="form-control"
                   name="message"
+                  value={contact.message}
+                  onChange={handleInput}
                   rows={5}
                   placeholder="Message"
                   required=""
