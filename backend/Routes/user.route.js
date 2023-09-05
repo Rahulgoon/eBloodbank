@@ -10,7 +10,7 @@ route.post("/signup", async (req, res) => {
   try {
     const isPresent = await User.findOne({ email });
     if (isPresent) {
-      return res.status(404).send("email already exist");
+      return res.status(404).send("Email Already Exist");
     }
     const hashPassword = await bcrypt.hash(password, 10); // hashing the password
     const userData = new User({ name, email, password: hashPassword });
@@ -49,6 +49,15 @@ route.post("/login", async (req, res) => {
     }
   } catch (error) {
     res.status(404).send(error.message);
+  }
+});
+
+route.get('/signup',async(req,res)=>{
+  try {
+      const getSign = await User.find()
+      res.status(200).send({ User : getSign });
+  } catch (error) {
+      res.status(500).send({ message:error.message });
   }
 });
 

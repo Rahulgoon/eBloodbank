@@ -51,7 +51,7 @@ export const Footer = () => {
            All Rights Reserved
         </div>
         <div className="credits">
-          Designed & Developed by <a href="https://bootstrapmade.com/">Rahul Goon</a>
+          Designed & Developed by <a href="">Rahul Goon</a>
         </div>
       </div>
       <div className="social-links text-center text-md-right pt-3 pt-md-0">

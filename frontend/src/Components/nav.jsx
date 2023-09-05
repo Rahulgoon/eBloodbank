@@ -48,6 +48,16 @@ export const Nav = () => {
                 </a>
               </li>
               <li>
+                <a className="nav-link scrollto" href="/gallery">
+                  Gallery
+                </a>
+              </li>
+              <li>
+                <a className="nav-link scrollto" href="/notice">
+                Notifications
+                </a>
+              </li>
+              <li>
                 <a className="nav-link scrollto" href="/search">
                   Looking for Blood
                 </a>
@@ -100,6 +110,16 @@ export const Nav = () => {
               <li style={mobile_nav_style}>
                 <a className="nav-link scrollto" href="/about">
                   About Donation
+                </a>
+              </li>
+              <li style={mobile_nav_style}>
+                <a className="nav-link scrollto" href="/gallery">
+                  Gallery
+                </a>
+              </li>
+              <li style={mobile_nav_style}>
+                <a className="nav-link scrollto" href="/notice">
+                  Notice
                 </a>
               </li>
               <li style={mobile_nav_style}>
