@@ -1,7 +1,33 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const bgroup = ['O+','O-','A+','A-','B+','B-','AB+','AB-','NOT KNOWN']
+const dist = [
+  "Alipurduar",
+  "Bankura",
+  "Paschim Bardhaman",
+  "Purba Bardhaman",
+  "Birbhum",
+  "Cooch Behar",
+  "Darjeeling",
+  "Dakshin Dinajpur",
+  "Hooghly",
+  "Howrah",
+  "Jalpaiguri",
+  "Jhargram",
+  "Kolkata",
+  "Kalimpong",
+  "Malda",
+  "Paschim Medinipur",
+  "Purba Medinipur",
+  "Murshidabad",
+  "Nadia",
+  "North 24 Parganas",
+  "South 24 Parganas",
+  "Purulia",
+  "Uttar Dinajpur",
+];
+
+const bgroup = ["O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"];
 const donorData = (donor) => {
   axios
     .post("http://127.0.0.1:8001/v1/api/donate", donor)
@@ -9,49 +35,50 @@ const donorData = (donor) => {
     .catch((err) => alert(err.message));
 };
 export const Donate = () => {
-    const [donor, setDonor] = useState({
-        name: "",
-        gender:"",
-        bloodgroup:"",
-        birthyear:"",
-        mobile:"",
-        email: "",
-        address: "",
-      });
-    const handleInput = (e) => {
-      const { name, value } = e.target;
-      setDonor({...donor,[name]:value});
-    };
-    const handleSign = (e) => {
-      e.preventDefault();
-      donorData(donor)
-      setDonor({
-        name: "",
-        gender:"",
-        bloodgroup:"",
-        birthyear:"",
-        mobile:"",
-        email: "",
-        address: "",
-      });
-    };
 
-  let year =[]
-  for(let i=1990;i<=2023;i++){
-    year.push(i)
+  const [donor, setDonor] = useState({
+    name: "",
+    gender: "",
+    bloodgroup: "",
+    birthyear: "",
+    mobile: "",
+    email: "",
+    address: "",
+  });
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    setDonor({ ...donor, [name]: value });
+  };
+  const handleSign = (e) => {
+    e.preventDefault();
+    donorData(donor);
+    setDonor({
+      name: "",
+      gender: "",
+      bloodgroup: "",
+      birthyear: "",
+      mobile: "",
+      email: "",
+      address: "",
+    });
+  
+  };
+
+  let year = [];
+  for (let i = 1990; i <= 2005; i++) {
+    year.push(i);
   }
- console.log(year)
+  console.log(year);
 
-    return(
-        <>
-        <form onSubmit={handleSign} className="row g-3">
-
+  return (
+    <>
+      <form onSubmit={handleSign} className="row g-3">
         <div className="col-12">
           <label htmlFor="inputName4" className="form-label">
-            Donor Name
+            | Donor Name |
           </label>
           <input
-            placeholder="Donor Name"
+            placeholder="Enter Your Name"
             type="text"
             className="form-control"
             id="inputName4"
@@ -62,62 +89,62 @@ export const Donate = () => {
         </div>
 
         <div className="col-12">
-        <label htmlFor="inputGender4">Gender</label>
-        <select
-         type="input"
-         onChange={handleInput}
-         name="gender"
-         value={donor.gender}
-         className="form-control"
-         aria-label=".form-select-sm example"
-        >
-        <option selected>Choose....</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Other">Other</option>
-        </select>
-        </div>
-
-        
-        <div className="col-12">
-        <label htmlFor="inputBirth4">Blood Group</label>
-        <select
-         type="input"
-         onChange={handleInput}
-         name="bloodgroup"
-         value={donor.bloodgroup}
-         className="form-control"
-         aria-label=".form-select-sm example"
-        >
-        <option selected>Choose....</option>
-        {bgroup.map((el)=>(
-        <option value={el}>{el}</option>
-       ))}
-        </select>
+          <label htmlFor="inputGender4">| Gender |</label>
+          <select
+            type="input"
+            onChange={handleInput}
+            name="gender"
+            value={donor.gender}
+            className="form-control"
+            aria-label=".form-select-sm example"
+          >
+            <option selected>Choose your gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
 
         <div className="col-12">
-        <label htmlFor="inputBirth4">Birth Year</label>
-        <select
-         type="input"
-         onChange={handleInput}
-         name="birthyear"
-         value={donor.birthyear}
-         className="form-control"
-         aria-label=".form-select-sm example"
-        >
-        <option selected>Choose....</option>
-        {year.map((el)=>(
-        <option value={el}>{el}</option>
-       ))}
-        </select>
+          <label htmlFor="inputBirth4">| Blood Group |</label>
+          <select
+            type="input"
+            onChange={handleInput}
+            name="bloodgroup"
+            value={donor.bloodgroup}
+            className="form-control"
+            aria-label=".form-select-sm example"
+          >
+            <option>Choose your blood group</option>
+            {bgroup.map((el) => (
+              <option value={el}>{el}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className="col-12">
+          <label htmlFor="inputBirth4">| Birth Year |</label>
+          <select
+            type="input"
+            onChange={handleInput}
+            name="birthyear"
+            value={donor.birthyear}
+            className="form-control"
+            aria-label=".form-select-sm example"
+          >
+            <option>Choose your birth year</option>
+            {year.map((el) => (
+              <option value={el}>{el}</option>
+            ))}
+          </select>
         </div>
 
         <div className="col-12">
           <label htmlFor="inputMobile4" className="form-label">
-            Mobile No.
+            | Mobile No. |
           </label>
           <input
+            maxLength={10}
             placeholder="Enter Your Mobile No."
             type="number"
             className="form-control"
@@ -130,7 +157,7 @@ export const Donate = () => {
 
         <div className="col-12">
           <label htmlFor="inputEmail4" className="form-label">
-           Email Id
+            | Email Id |
           </label>
           <input
             placeholder="Enter Your Email Id"
@@ -143,25 +170,30 @@ export const Donate = () => {
           />
         </div>
 
-        <div className="col-12">
         <label htmlFor="inputEmail4" className="form-label">
-            Address
-          </label>
-                <textarea
-                  className="form-control"
-                  placeholder="Address"
-                  onChange={handleInput}
-                  name="address"
-                  value={donor.address}
-                />
-              </div>
+          | Select District |
+        </label>
+        <select
+          className="form-control"
+          placeholder="Address"
+          onChange={handleInput}
+          name="address"
+          value={donor.address}
+        >
+          <option disabled value="">
+            -----Select-----
+          </option>
+          {dist.map((el) => (
+            <option value={el}>{el}</option>
+          ))}
+        </select>
 
         <div className="col-12">
           <button type="submit" className="btn btn-danger">
-           SUBMIT
+            SUBMIT
           </button>
         </div>
       </form>
-        </>
-    );
-}
+    </>
+  );
+};

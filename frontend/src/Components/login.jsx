@@ -69,7 +69,7 @@ export const Login = () => {
         </div>
         <div className="col-12"></div>
         <div className="col-12">
-          <input type="submit" value="Log In !!" className="btn btn-danger" />
+          <input type="submit" value="Log In" className="btn btn-danger" />
         </div>
         <h6>
           Do you want to Sign Up ?{" "}

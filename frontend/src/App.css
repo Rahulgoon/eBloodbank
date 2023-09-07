@@ -15,13 +15,24 @@
     margin-bottom: 3rem;
 }
 #form-select{
-    margin: 11rem;
+    margin: 12rem;
+    margin-left: 15rem;
     height: 300px;
     width: 70%;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     padding: 10px;
     color: red;
 }
+
+#show{
+    display:flex;
+    gap: 10px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+
+/*-----SEARCH BOX-----*/
+
 #form-select>button{
     color: white;
     font-weight: 32px;
@@ -31,9 +42,31 @@
     padding: 8px;
     border-radius: 10px;
 }
-#show{
-    display:flex;
-    gap: 10px;
-    margin-top: 6px;
-    margin-bottom: 10px;
-}
+@media (max-width: 768px) {
+    #form-select{
+        margin: 9rem;
+        margin-left: 5rem;
+        height: 300px;
+        width: 70%;
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        padding: 10px;
+        color: red;
+    }
+  }
+  /*-----SEARCH OUTPUT-----*/
+  .containersearch{
+    margin-top:10vh;
+    padding: 50px;
+  }
+  .containersearch>table>thead>tr>th{
+    border:2px solid red;
+    color: red;
+  }
+  .containersearch>table>tbody>tr>td{
+    border:2px solid red;
+    color: red;
+  }
+  .containersearch>table>tbody>tr>th{
+    border:2px solid red;
+    color: red;
+  }

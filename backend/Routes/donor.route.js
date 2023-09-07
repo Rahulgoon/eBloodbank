@@ -8,21 +8,21 @@ route.post("/donate", async(req,res) => {
     const{name,gender,bloodgroup,birthyear,mobile,email,address} = req.body;
     try {
         const donorIsPresent = await Donor.findOne({email});
-        if(donorIsPresent) {
-            return res.status(404).send("Email Already Exist");
-        }
+        // if(donorIsPresent) {
+        //     return res.status(404).send("Email Already Exist");
+        // }
         const donorData = new Donor({name,gender,bloodgroup,birthyear,mobile,email,address})
         await donorData.save()
-        res.status(201).send("Donor Signed Up");
+        res.status(201).send("Donor Created Successfully");
     } catch (error) {
         res.status(404).send(error.message);
     }
 });
 
-route.get('/donate',async(req,res)=>{
+route.get('/search',async(req,res)=>{
     try {
         const getDonor = await Donor.find()
-        res.status(200).send({ Donor : getDonor });
+        res.status(200).send( getDonor );
     } catch (error) {
         res.status(500).send({ message:error.message });
     }

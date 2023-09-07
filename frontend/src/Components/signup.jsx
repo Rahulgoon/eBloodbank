@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 import axios from "axios";
 
 const uploadData = (user) => {
@@ -7,7 +8,9 @@ const uploadData = (user) => {
     .then((res) => alert(res.data))
     .catch((err) => alert(err.message));
 };
+
 export const Signup = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -27,6 +30,9 @@ export const Signup = () => {
       email: "",
       password: "",
     });
+    setTimeout(() => {
+      navigate("/login");
+    }, 1200)
   };
   return (
     <>
