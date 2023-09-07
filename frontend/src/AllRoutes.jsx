@@ -8,6 +8,7 @@ import { Donate } from "./Components/donate";
 import { Signup } from "./Components/signup";
 import { Contact } from "./Components/contact";
 import { Login } from "./Components/login";
+import { Payment } from "./Components/payment";
 
 export function AllRoutes(){
     return(
@@ -22,6 +23,7 @@ export function AllRoutes(){
             <Route path={"/contact"} element={<Contact/>} ></Route>
             <Route path={"/signup"} element={<Signup/>}></Route>
             <Route path={"/login"} element={<Login/>}></Route>
+            <Route psth={"/payment"} element={<Payment/>}></Route>
             <Route path={"*"} element={<Home/>}></Route>
         </Routes>
         </>

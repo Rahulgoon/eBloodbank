@@ -39,7 +39,7 @@ const handleSearch=(e)=>{
 
   return (
     <>
-    {!isLoad ? <form onSubmit={handleSearch} id="form-select" >
+    {false ? <form onSubmit={handleSearch} id="form-select" >
     <h2>FIND BLOOD AVAILABILITY</h2><br />
         <label >| Blood Group |</label>
       <select
@@ -82,13 +82,16 @@ const handleSearch=(e)=>{
   <div className="containersearch">
     <h2 style={{textAlign:"center",color:"red"}}>Blood Stock Availability</h2>
     <br />
-    <table class="table">
+    <table className="table">
      <thead>
        <tr>
         <th scope="col">Donor ID</th>
         <th scope="col">Name</th>
-        <th scope="col">District</th>
         <th scope="col">Blood Group</th>
+        <th scope="col">Age</th>
+        <th scope="col">District</th>
+        <th scope="col">Choose Your Donor</th>
+        
       </tr>
     </thead>
     <tbody>
@@ -97,8 +100,12 @@ const handleSearch=(e)=>{
          <tr>
          <th scope="row">{el._id}</th>
          <td>{el.name}</td>
-         <td>{el.address}</td>
          <td>{el.bloodgroup}</td>
+         <td>{2023-el.birthyear}</td>
+         <td>{el.address}</td>
+         <td>
+          <button className="btn btn-danger">Pay</button>
+          </td>
          </tr>
          ))
         }
