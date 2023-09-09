@@ -23,7 +23,7 @@ export function AllRoutes(){
             <Route path={"/contact"} element={<Contact/>} ></Route>
             <Route path={"/signup"} element={<Signup/>}></Route>
             <Route path={"/login"} element={<Login/>}></Route>
-            <Route psth={"/payment"} element={<Payment/>}></Route>
+            <Route path={"/payment"} element={<Payment/>}></Route>
             <Route path={"*"} element={<Home/>}></Route>
         </Routes>
         </>

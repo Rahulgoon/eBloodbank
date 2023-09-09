@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import {useNavigate} from "react-router";
 
 const dist=['Alipurduar','Bankura','Paschim Bardhaman','Purba Bardhaman','Birbhum','Cooch Behar','Darjeeling','Dakshin Dinajpur','Hooghly','Howrah','Jalpaiguri','Jhargram','Kolkata','Kalimpong','Malda','Paschim Medinipur','Purba Medinipur','Murshidabad','Nadia','North 24 Parganas','South 24 Parganas','Purulia','Uttar Dinajpur']
 
 export const Search = () => {
+
+  const navigate = useNavigate()
   const [isLoad ,setIsload] = useState(false)
   const [search,setSearch]=useState({
     blood:"",
@@ -33,13 +36,18 @@ const handleSearch=(e)=>{
     blood:"",
     address:""
   })
-  setIsload(!isLoad)
+  setIsload(!isLoad);
 }
 //console.log(res)
+ const handleNavigate =()=>{
+  setTimeout(()=>{
+    navigate("/payment")
+  },1200)
+ }
 
   return (
     <>
-    {false ? <form onSubmit={handleSearch} id="form-select" >
+    {!isLoad ? <form onSubmit={handleSearch} id="form-select" >
     <h2>FIND BLOOD AVAILABILITY</h2><br />
         <label >| Blood Group |</label>
       <select
@@ -48,6 +56,7 @@ const handleSearch=(e)=>{
         onChange={handleInput}
         name="blood"
         value={search.blood}
+        required
       >
         <option  selected>-----Select-----</option>
         <option value="O+">O+</option>
@@ -67,6 +76,7 @@ const handleSearch=(e)=>{
         onChange={handleInput}
         name="address"
         value={search.address}
+        required
       >
         <option selected value="">-----Select-----</option>
        {dist.sort().map((el)=>(
@@ -91,7 +101,6 @@ const handleSearch=(e)=>{
         <th scope="col">Age</th>
         <th scope="col">District</th>
         <th scope="col">Choose Your Donor</th>
-        
       </tr>
     </thead>
     <tbody>
@@ -104,7 +113,7 @@ const handleSearch=(e)=>{
          <td>{2023-el.birthyear}</td>
          <td>{el.address}</td>
          <td>
-          <button className="btn btn-danger">Pay</button>
+          <button onClick={handleNavigate} className="btn btn-danger">Pay</button>
           </td>
          </tr>
          ))

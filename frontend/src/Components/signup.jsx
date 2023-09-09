@@ -49,6 +49,7 @@ export const Signup = () => {
             onChange={handleInput}
             name="name"
             value={user.name}
+            required
           />
         </div>
         <div className="col-12">
@@ -56,13 +57,14 @@ export const Signup = () => {
             User Email
           </label>
           <input
-            placeholder="abc@gmail.com"
+            placeholder="rg97531@gmail.com"
             type="email"
             className="form-control"
             onChange={handleInput}
             name="email"
             value={user.email}
             id="inputEmail4"
+            required
           />
         </div>
         <div className="col-12">
@@ -78,10 +80,11 @@ export const Signup = () => {
             name="password"
             value={user.password}
             id="inputPassword4"
+            required
           />
           <label id="show" className="form-check-label" htmlFor="gridCheck">
-            Show Password
             <input type="checkbox" onChange={() => setShow((prev) => !prev)} />
+            Show Password
           </label>
         </div>
         <div className="col-12">

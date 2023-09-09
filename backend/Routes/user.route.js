@@ -32,17 +32,6 @@ route.post("/login", async (req, res) => {
     const compPass = await bcrypt.compare(password, isEmailPresent.password); //  comparing the password
     if (compPass) {
       // const { password , ...otherdata} = isEmailPresent.toObject()
-      const token = jwt.sign(
-        {
-          id: isEmailPresent._id,
-          name: isEmailPresent.name,
-          email: isEmailPresent.email,
-        },
-        "RAHUL1234",
-        {
-          expiresIn: "28days",
-        }
-      );
       res.status(200).send({ message: "Login Success", User: token });
     } else {
       res.status(404).send("Invalid Password");

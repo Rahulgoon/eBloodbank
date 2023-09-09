@@ -12,7 +12,10 @@ const userSchema = new Schema({
     password:{
         type:String,
         require:true
-    }
+    },
+    paymentScreenshot: {
+        type: String,
+      }
 },{timestamps:true});
 const User = model ('user',userSchema);//collection name
 module.exports = User

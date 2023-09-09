@@ -85,6 +85,7 @@ export const Donate = () => {
             onChange={handleInput}
             name="name"
             value={donor.name}
+            required
           />
         </div>
 
@@ -97,6 +98,7 @@ export const Donate = () => {
             value={donor.gender}
             className="form-control"
             aria-label=".form-select-sm example"
+            required
           >
             <option selected>Choose your gender</option>
             <option value="Male">Male</option>
@@ -114,6 +116,7 @@ export const Donate = () => {
             value={donor.bloodgroup}
             className="form-control"
             aria-label=".form-select-sm example"
+            required
           >
             <option>Choose your blood group</option>
             {bgroup.map((el) => (
@@ -131,6 +134,7 @@ export const Donate = () => {
             value={donor.birthyear}
             className="form-control"
             aria-label=".form-select-sm example"
+            required
           >
             <option>Choose your birth year</option>
             {year.map((el) => (
@@ -152,6 +156,7 @@ export const Donate = () => {
             onChange={handleInput}
             name="mobile"
             value={donor.mobile}
+            required
           />
         </div>
 
@@ -167,6 +172,7 @@ export const Donate = () => {
             name="email"
             value={donor.email}
             id="inputEmail4"
+            required
           />
         </div>
 
@@ -179,6 +185,7 @@ export const Donate = () => {
           onChange={handleInput}
           name="address"
           value={donor.address}
+          required
         >
           <option disabled value="">
             -----Select-----
@@ -187,7 +194,6 @@ export const Donate = () => {
             <option value={el}>{el}</option>
           ))}
         </select>
-
         <div className="col-12">
           <button type="submit" className="btn btn-danger">
             SUBMIT

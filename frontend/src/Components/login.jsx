@@ -40,12 +40,14 @@ export const Login = () => {
           </label>
           <input
             onChange={handleInput}
-            placeholder="abc@gmail.com"
+            placeholder="rg97531@gmail.com"
             type="email"
             className="form-control"
             id="inputEmail4"
             value={luser.email}
             name="email"
+            required
+
           />
         </div>
         <div className="col-12">
@@ -61,20 +63,22 @@ export const Login = () => {
             id="inputPassword4"
             value={luser.password}
             name="password"
+            required
           />
           <label id="show" className="form-check-label" htmlFor="gridCheck">
-            Show Password
             <input type="checkbox" onChange={() => setShow((prev) => !prev)} />
+            Show Password
           </label>
         </div>
         <div className="col-12"></div>
         <div className="col-12">
           <input type="submit" value="Log In" className="btn btn-danger" />
         </div>
+
         <h6>
-          Do you want to Sign Up ?{" "}
+          Don't have account ?{" "}
           <a href="/signup">
-            <span>SIGN UP</span>
+            <span>Create an account</span>
           </a>
         </h6>
       </form>

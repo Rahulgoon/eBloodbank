@@ -12,9 +12,8 @@ const authMiddleware = async (req, res, next) => {
       return res.status(401).json({ message: 'Authorization token not found' });
     }
 
-    const decodedToken = jwt.verify(token, process.env.SECRET_KEY );
-
-    const user = await User.findById(decodedToken.userId);
+    const decodedToken = jwt.verify(token,"RAHUL1234");
+    const user = await User.findOne({email:decodedToken.email});
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }

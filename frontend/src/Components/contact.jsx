@@ -87,7 +87,7 @@ export const Contact = () => {
                     className="form-control"
                     id="name"
                     placeholder="Your Name"
-                    required=""
+                    required
                   />
                 </div>
                 <div className="col-md-6 form-group mt-3 mt-md-0">
@@ -99,7 +99,7 @@ export const Contact = () => {
                     onChange={handleInput}
                     id="email"
                     placeholder="Your Email"
-                    required=""
+                    required
                   />
                 </div>
               </div>
@@ -112,7 +112,7 @@ export const Contact = () => {
                   onChange={handleInput}
                   id="subject"
                   placeholder="Subject"
-                  required=""
+                  required
                 />
               </div>
               <div className="form-group mt-3">
@@ -123,7 +123,7 @@ export const Contact = () => {
                   onChange={handleInput}
                   rows={5}
                   placeholder="Message"
-                  required=""
+                  required
                   defaultValue={""}
                 />
               </div>
