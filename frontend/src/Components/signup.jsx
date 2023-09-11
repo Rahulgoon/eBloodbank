@@ -74,12 +74,12 @@ export const Signup = () => {
           <input
             minLength={10}
             placeholder="********"
-            type={show ? "text" : "password"}
             className="form-control"
             onChange={handleInput}
             name="password"
             value={user.password}
             id="inputPassword4"
+            type={show ? "text" : "password"}
             required
           />
           <label id="show" className="form-check-label" htmlFor="gridCheck">

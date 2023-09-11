@@ -28,11 +28,12 @@ const dist = [
 ];
 
 const bgroup = ["O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"];
+
 const donorData = (donor) => {
   axios
     .post("http://127.0.0.1:8001/v1/api/donate", donor)
     .then((res) => alert(res.data))
-    .catch((err) => alert(err.message));
+    .catch((err) =>  alert(err.message));
 };
 export const Donate = () => {
 
@@ -61,14 +62,13 @@ export const Donate = () => {
       email: "",
       address: "",
     });
-  
   };
 
   let year = [];
   for (let i = 1990; i <= 2005; i++) {
     year.push(i);
   }
-  console.log(year);
+  // console.log(year);
 
   return (
     <>
@@ -190,7 +190,7 @@ export const Donate = () => {
           <option disabled value="">
             -----Select-----
           </option>
-          {dist.map((el) => (
+          {dist.sort().map((el) => (
             <option value={el}>{el}</option>
           ))}
         </select>

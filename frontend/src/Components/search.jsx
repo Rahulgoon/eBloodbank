@@ -100,7 +100,7 @@ const handleSearch=(e)=>{
         <th scope="col">Blood Group</th>
         <th scope="col">Age</th>
         <th scope="col">District</th>
-        <th scope="col">Choose Your Donor</th>
+        <th scope="col">Pay For Blood</th>
       </tr>
     </thead>
     <tbody>

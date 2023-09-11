@@ -1,5 +1,6 @@
 const express = require("express");
 const Donor = require("../Models/donor.model");
+const jwt = require("jsonwebtoken");
 
 const route = express.Router();
 
@@ -9,9 +10,9 @@ route.post("/donate", async (req, res) => {
     req.body;
   try {
     const isPresent = await Donor.findOne({ email });
-    // if(donorIsPresent) {
-    //     return res.status(404).send("Email Already Exist");
-    // }
+    if(isPresent) {
+        return res.status(404).send("Email Already Exist");
+    }
     const donorData = new Donor({
       name,
       gender,
@@ -21,22 +22,23 @@ route.post("/donate", async (req, res) => {
       email,
       address,
     });
-    const token = jwt.sign(
-        {
-          id: isPresent._id,
-          name: isPresent.name,
-          email: isPresent.email,
-        },
-        "RAHUL1234",
-        {
-          expiresIn: "28days",
-        }
-      );
+    // const token = jwt.sign(
+    //     {
+    //       id: isPresent._id,
+    //       name: isPresent.name,
+    //       email: isPresent.email,
+    //     },
+    //     "RAHUL1234",
+    //     {
+    //       expiresIn: "28days",
+    //     }
+    //   );
     await donorData.save();
-    res.status(201).send("Donor Created Successfully",token);
+    res.status(201).send("Donor Created Successfully");
   } catch (error) {
     res.status(404).send(error.message);
   }
+  // console.log(req.body)
 });
 
 route.get("/donate", async (req, res) => {
