@@ -1,6 +1,6 @@
 const express = require("express");
 const Donor = require("../Models/donor.model");
-const jwt = require("jsonwebtoken");
+
 
 const route = express.Router();
 
@@ -22,17 +22,7 @@ route.post("/donate", async (req, res) => {
       email,
       address,
     });
-    // const token = jwt.sign(
-    //     {
-    //       id: isPresent._id,
-    //       name: isPresent.name,
-    //       email: isPresent.email,
-    //     },
-    //     "RAHUL1234",
-    //     {
-    //       expiresIn: "28days",
-    //     }
-    //   );
+  
     await donorData.save();
     res.status(201).send("Donor Created Successfully");
   } catch (error) {

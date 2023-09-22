@@ -9,7 +9,7 @@ export const Nav = () => {
           <div className="contact-info d-flex align-items-center">
             <i className="bi bi-envelope" />{" "}
             <a href="mailto:contact@example.com">ebloodbank@gmail.com</a>
-            <i className="bi bi-phone" /> +91 8348735101
+            <i className="bi bi-phone" /> +91 8348735678
           </div>
           <div className="d-none d-lg-flex social-links align-items-center">
             <a href="#" className="twitter">

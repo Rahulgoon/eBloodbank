@@ -17,9 +17,9 @@ export const Footer = () => {
               <br />
               India <br />
               <br />
-              <strong>Phone:</strong> +91 8348735101
+              <strong>Phone:</strong> +91 8348735678
               <br />
-              <strong>Email:</strong> rgbloodbank@gmail.com
+              <strong>Email:</strong> ebloodbank@gmail.com
               <br />
             </p>
           </div>
@@ -30,14 +30,22 @@ export const Footer = () => {
                 <i className="bx bx-chevron-right" /> <a href="/">Home</a>
               </li>
               <li>
-                <i className="bx bx-chevron-right" /> <a href="/about">Learn About Donation</a>
+                <i className="bx bx-chevron-right" /> <a href="/about">About Donation</a>
               </li>
               <li>
                 <i className="bx bx-chevron-right" /> <a href="/search"> Looking for Blood</a>
               </li>
               <li>
                 <i className="bx bx-chevron-right" />{" "}
-                <a href="/donate">  Want to Donate</a>
+                <a href="/donate">Want to Donate</a>
+              </li>
+              <li>
+                <i className="bx bx-chevron-right" />{" "}
+                <a href="/contact">Contact Us</a>
+              </li>
+              <li>
+                <i className="bx bx-chevron-right" />{" "}
+                <a href="/notice">Notices</a>
               </li>
             </ul>
           </div>

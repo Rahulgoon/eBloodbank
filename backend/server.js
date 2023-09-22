@@ -1,24 +1,23 @@
 const express = require('express');
 const {mongoose} = require('mongoose');
-const cors = require("cors")
+const cors = require("cors");
 const userRoute = require("./Routes/user.route.js");
 const donorRoute = require("./Routes/donor.route.js");
 const contactRoute = require("./Routes/contact.route.js");
-const paymentScreenshot = require('./Routes/payment.route.js')
+const paymentScreenshot = require('./Routes/payment.route.js');
+const noticeRoute = require("./Routes/notice.route.js");
 
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-//TESTING BACKEND IS WORKING OR NOT!
-// app.use('/',(req,res) => {
-//     res.send("Backend page is working");
-// })
+
 app.use("/v1/api",userRoute);
 app.use("/v1/api",donorRoute);
 app.use("/v1/api",contactRoute);
 app.use("/v1/api",paymentScreenshot);
+app.use("/v1/api",noticeRoute);
     
 
 const MONGO_URI = "mongodb+srv://rahulgoon23:rahulgoon123@cluster0.goc2aew.mongodb.net/BloodBank";

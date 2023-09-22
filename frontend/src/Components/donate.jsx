@@ -33,7 +33,7 @@ const donorData = (donor) => {
   axios
     .post("http://127.0.0.1:8001/v1/api/donate", donor)
     .then((res) => alert(res.data))
-    .catch((err) =>  alert(err.message));
+    .catch((err) => console.log(err.message));
 };
 export const Donate = () => {
 
