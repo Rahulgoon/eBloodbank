@@ -74,7 +74,7 @@ export const Nav = () => {
               </li>
             </ul>
             <button
-              className="btn btn-ghost"
+              className="btn btn-ghost d-lg-none"
               type="button"
               data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasTop"

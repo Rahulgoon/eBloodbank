@@ -15,6 +15,7 @@ import { BookAdmin } from "./Components/admin/bookadmin";
 import { NoticeAdmin } from "./Components/admin/noticeadmin";
 import { UserAdmin } from "./Components/admin/useradmin";
 import { ContactAdmin } from "./Components/admin/contactadmin";
+import { PayCirtificate } from "./Components/paycirtificate";
 
 export function AllRoutes(){
     return(
@@ -37,6 +38,7 @@ export function AllRoutes(){
             <Route path={"/bookadmin"} element={<BookAdmin/>}></Route>
             <Route path={"/contactadmin"} element={<ContactAdmin/>}></Route>
             <Route path={"/noticeadmin"} element={<NoticeAdmin/>}></Route>
+            <Route path={"/paycirtificate"} element={<PayCirtificate/>}></Route>
         </Routes>
         </>
     );

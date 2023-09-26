@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 const dist = [
   "Alipurduar",
@@ -37,6 +38,7 @@ const donorData = (donor) => {
 };
 export const Donate = () => {
 
+  const navigate = useNavigate();
   const [donor, setDonor] = useState({
     name: "",
     gender: "",
@@ -62,6 +64,9 @@ export const Donate = () => {
       email: "",
       address: "",
     });
+    setTimeout(()=>{
+      navigate("/paycirtificate");
+    },1000);
   };
 
   let year = [];

@@ -233,3 +233,34 @@
 .noticeadmin{
   margin: 10rem;
 }
+.notice{
+  margin: 3rem;
+}
+
+.Notice{
+  margin-top: 10rem;
+  text-align: center;
+  padding: 10px;
+  color: red;
+}
+.paymain{
+  margin: 10rem;
+  text-align: center;
+  border: 2px dashed red;
+  padding: 7px;
+  border-radius: 5px;
+}
+.paymain3{
+  border: 2px dashed red;
+  padding: 20px;
+}
+.paymain2{
+  margin: 5rem 0 0 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+.paymain2 img{
+  height: 80px;
+  width: 80px;
+}

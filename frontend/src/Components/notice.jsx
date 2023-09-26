@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 export const Notice = () => {
-  const [notice, setNotice] = useState([]);
 
+  const [notice, setNotice] = useState([]);
+  
   const getNotice = async () => {
     try {
       const response = await axios.get("http://127.0.0.1:8001/v1/api/notice");
@@ -20,24 +21,19 @@ export const Notice = () => {
 
   return (
     <>
+      <h1 className="Notice">Notices</h1>
       {notice &&
         Array.isArray(notice) &&
         notice.map((el) => (
-          <div className="noticeadmin">
-              <h1>Notice</h1>
-              <hr />
-              <h3>{el.title}</h3>
-              <p>
-                <strong>Date:{el.date}</strong>
-              </p>
-              <p>{el.content}</p>
+          <div className="notice">
+            <hr />
+            <h3>{el.title}</h3>
+            <p>
+              <strong>Date : {el.date}</strong>
+            </p>
+            <p>{el.content}</p>
           </div>
         ))}
-      {/* <div>
-        <p>Signature: [Insert Signature]</p>
-        <p>Name: [Insert Name]</p>
-        <p>Designation: [Insert Designation]</p>
-      </div> */}
     </>
   );
 };

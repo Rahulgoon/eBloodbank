@@ -30,6 +30,7 @@ export const NoticeAdmin = () => {
 
   return (
     <>
+    
       <form className="noticeadmin"  onSubmit={handleSign}>
         <div className="mb-3">
           <label htmlFor="dateInput" className="form-control">
