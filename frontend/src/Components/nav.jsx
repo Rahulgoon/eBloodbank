@@ -146,6 +146,7 @@ export const Nav = () => {
           </a>
         </div>
       </header>
+      <marquee className="marquee" behavior="" direction="" style={{"color":"red","marginBottom":"5rem", "margin":"8rem 0 0 0", "opacity":"2"}}>Donating blood is a simple yet heroic act that can help those in need. Join us at our Blood Donation Camp and become a lifesaver.</marquee>
       {/* End Header */}
     </>
   );

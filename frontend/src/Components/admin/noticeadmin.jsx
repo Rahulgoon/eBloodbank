@@ -30,13 +30,47 @@ export const NoticeAdmin = () => {
 
   return (
     <>
-    
-      <form className="noticeadmin"  onSubmit={handleSign}>
+         <div className="dashboard">
+        <div className="navdashboard">
+          <ul className="nav flex-column">
+            <li className="nav-item">
+              <a className="nav-link" href="/dashboard">
+                Dashboard
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/useradmin">
+                Users
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/donoradmin">
+                Donor
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/bookadmin">
+                Book
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/contactadmin">
+                Contacts
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/noticeadmin">
+                Notice
+              </a>
+            </li>
+          </ul>
+          </div>
+      <form className="noticeadminn"  onSubmit={handleSign}>
         <div className="mb-3">
           <label htmlFor="dateInput" className="form-control">
-            Date
+            Date & Time
           </label>
-          <input type="date" className="form-control" 
+          <input type="datetime-local" className="form-control" 
           name="date"
           value={notice.date}
           onChange={handleInput} />
@@ -76,6 +110,7 @@ export const NoticeAdmin = () => {
           Proceed
         </button>
       </form>
+      </div>
     </>
   );
 };

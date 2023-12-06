@@ -22,18 +22,19 @@ export const Notice = () => {
   return (
     <>
       <h1 className="Notice">Notices</h1>
+      <hr />
       {notice &&
         Array.isArray(notice) &&
         notice.map((el) => (
           <div className="notice">
-            <hr />
-            <h3>{el.title}</h3>
+            <h3><strong>{el.title}</strong></h3>
             <p>
-              <strong>Date : {el.date}</strong>
+              <strong>Date & Time : {el.date}</strong>
             </p>
             <p>{el.content}</p>
           </div>
         ))}
+        <hr />
     </>
   );
 };

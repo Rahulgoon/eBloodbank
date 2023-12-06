@@ -33,7 +33,7 @@ export function Payment() {
         <h2 style={{ padding: "2px", textAlign: "center" }}>Pay Here</h2>
         <div className="qr_code">
           <img
-            src="https://static.toiimg.com/thumb/resizemode-4,msid-89052864,imgsize-7302,width-364/89052864.jpg"
+            src="https://rzp.io/i/JBUWuXI"
             alt="qr code"
           />
         </div>

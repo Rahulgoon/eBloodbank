@@ -1,7 +1,6 @@
 const express = require("express");
 const Donor = require("../Models/donor.model");
 
-
 const route = express.Router();
 
 route.post("/donate", async (req, res) => {

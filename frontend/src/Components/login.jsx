@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
+
 export const Login = () => {
   const navigate = useNavigate();
   const [luser, setLuser] = useState({
@@ -37,6 +38,7 @@ export const Login = () => {
       alert(error.message);
     }
   };
+
   return (
     <>
       <form className="row g-3" onSubmit={handleSubmitLog}>
@@ -46,14 +48,13 @@ export const Login = () => {
           </label>
           <input
             onChange={handleInput}
-            placeholder="rg97531@gmail.com"
+            placeholder="Enter your valid email"
             type="email"
             className="form-control"
             id="inputEmail4"
             value={luser.email}
             name="email"
             required
-
           />
         </div>
         <div className="col-12">
@@ -71,6 +72,7 @@ export const Login = () => {
             name="password"
             required
           />
+          <br />
           <label id="show" className="form-check-label" htmlFor="gridCheck">
             <input type="checkbox" onChange={() => setShow((prev) => !prev)} />
             Show Password
@@ -80,7 +82,6 @@ export const Login = () => {
         <div className="col-12">
           <input type="submit" value="Log In" className="btn btn-danger" />
         </div>
-
         <h6>
           Don't have account ?{" "}
           <a href="/signup">

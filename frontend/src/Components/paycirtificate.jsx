@@ -19,13 +19,13 @@ export const PayCirtificate = () => {
         </p>
         <div className="paymain2">
           <div className="paychild1">
-            <h3>name</h3>
+            <h3></h3>
             <hr style={{border:"1.5px solid black"}}></hr>
             <h4>Signature</h4>
           </div>
           <img src="https://media.istockphoto.com/id/1081786788/vector/drop.jpg?s=612x612&w=0&k=20&c=4Xqh6-K94vU9uAnYBNTu8JWb2CoWi37JB4gKfvdSIb0=" alt="bloodimg" />
           <div className="paychild2">
-            <h3>date</h3>
+            <h3></h3>
             <hr style={{border:"1.5px solid black"}}></hr>
             <h4>Date</h4>
           </div>

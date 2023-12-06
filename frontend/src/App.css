@@ -230,13 +230,10 @@
 .noticeadmin{
   margin: 10rem;
 }
-.noticeadmin{
-  margin: 10rem;
-}
 .notice{
-  margin: 3rem;
+  margin: 2rem 0 3rem 6rem;
+  width: 70%;
 }
-
 .Notice{
   margin-top: 10rem;
   text-align: center;
@@ -252,7 +249,7 @@
 }
 .paymain3{
   border: 2px dashed red;
-  padding: 20px;
+  padding: 20px; 
 }
 .paymain2{
   margin: 5rem 0 0 0;
@@ -263,4 +260,32 @@
 .paymain2 img{
   height: 80px;
   width: 80px;
+}
+@media (max-width: 768px) {
+  .paymain {
+    width: 80%;
+    margin: 9rem 0 1rem 3rem;
+  }
+
+  .paymain2 {
+    margin: 2rem 0 0 0;
+  }
+
+  .paymain2 img {
+    height: 60px;
+    width: 60px;
+  }
+}
+.noticeadminn{
+  width: 50%;
+  margin: 2rem 0 0 1rem;
+}
+.marquee{
+  animation: anima 3s infinite alternate;
+}
+@keyframes anima {
+  50% {
+    background-color: rgb(248, 6, 6);
+    color: white;
+  }
 }

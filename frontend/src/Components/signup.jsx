@@ -10,6 +10,7 @@ const uploadData = (user) => {
 };
 
 export const Signup = () => {
+  
   const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
@@ -42,7 +43,7 @@ export const Signup = () => {
             User Name
           </label>
           <input
-            placeholder="Name"
+            placeholder="Enter your name"
             type="text"
             className="form-control"
             id="inputName4"
@@ -57,7 +58,7 @@ export const Signup = () => {
             User Email
           </label>
           <input
-            placeholder="rg97531@gmail.com"
+            placeholder="Enter your valid email"
             type="email"
             className="form-control"
             onChange={handleInput}
@@ -82,6 +83,7 @@ export const Signup = () => {
             type={show ? "text" : "password"}
             required
           />
+          <br />
           <label id="show" className="form-check-label" htmlFor="gridCheck">
             <input type="checkbox" onChange={() => setShow((prev) => !prev)} />
             Show Password
